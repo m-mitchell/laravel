@@ -1,10 +1,5 @@
 <?php
 
-/**
- * Created by Cristian.
- * Date: 18/09/16 08:36 PM.
- */
-
 namespace Reliese\Meta\Postgres;
 
 use Illuminate\Support\Arr;
@@ -27,6 +22,7 @@ class Column implements \Reliese\Meta\Column
 
     /**
      * @var array
+     * @todo check these
      */
     public static $mappings = [
         'string' => ['varchar', 'text', 'string', 'char', 'enum', 'tinytext', 'mediumtext', 'longtext'],
@@ -80,7 +76,7 @@ class Column implements \Reliese\Meta\Column
     /**
      * @param string $databaseType
      * @param \Illuminate\Support\Fluent $attributes
-     * @param todo handle non numeric precisions
+     * @todo handle non numeric precisions
      */
     protected function parsePrecision($databaseType, Fluent $attributes)
     {
