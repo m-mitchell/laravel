@@ -11,8 +11,10 @@ use ArrayIterator;
 use RuntimeException;
 use IteratorAggregate;
 use Illuminate\Database\MySqlConnection;
+use Illuminate\Database\PostgresConnection;
 use Illuminate\Database\ConnectionInterface;
 use Reliese\Meta\MySql\Schema as MySqlSchema;
+use Reliese\Meta\Postgres\Schema as PostgresSchema;
 
 class SchemaManager implements IteratorAggregate
 {
@@ -21,6 +23,7 @@ class SchemaManager implements IteratorAggregate
      */
     protected static $lookup = [
         MySqlConnection::class => MySqlSchema::class,
+        PostgresConnection::class => PostgresSchema::class,
     ];
 
     /**
